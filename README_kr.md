@@ -10,19 +10,16 @@
 * **ext_plugin_influxdb_measurement** : influxdb measurement 명 (default : counter)
 
 #### udp 방식 연동 여부 설정
-* **ext_plugin_influxdb_udp** : UDP protocol로 연동 (default : true)
+* **ext_plugin_influxdb_udp** : UDP protocol로 연동 (default : false) InfluxDB 3.0의 경우 UDP가 직접 지원되지 않습니다.
 * **ext_plugin_influxdb_udp_local_ip** : UDP local address (default : null)
 * **ext_plugin_influxdb_udp_local_port** : UDP local address (default : 0)
 * **ext_plugin_influxdb_udp_target_ip** : UDP target(influxdb) address (default : 127.0.0.1)
 * **ext_plugin_influxdb_udp_target_port** : UDP target(influxdb) port (default : 8089)
 
-#### http 방식 연동 여부 설정 (set false **ext_plugin_influxdb_udp** for using http)
-* **ext_plugin_influxdb_http_target_ip** : http target(influxdb) address (default : 127.0.0.1)
-* **ext_plugin_influxdb_http_target_port** : http target(influxdb) port (default : 8086)
-* **ext_plugin_influxdb_http_retention_policy** : measurement retention policy (default : default)
-* **ext_plugin_influxdb_id** : (default : root)
-* **ext_plugin_influxdb_password** : (default : root)
-* **ext_plugin_influxdb_dbName** : influxdb dbName (default : scouterCounter)
+#### http 방식 연동 여부 설정 (InfluxDB 3.0 API, set false **ext_plugin_influxdb_udp**)
+* **ext_plugin_influxdb_http_url** : http target(influxdb) URL (default : http://127.0.0.1:8086)
+* **ext_plugin_influxdb_token** : InfluxDB 3.0 접근 토큰 Token (default : empty)
+* **ext_plugin_influxdb_database** : influxdb database / bucket 이름 (default : scouterCounter)
     
 ### dependencies
 Refer to [pom.xml](./pom.xml)

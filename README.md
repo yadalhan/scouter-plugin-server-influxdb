@@ -10,19 +10,16 @@
 * **ext_plugin_influxdb_measurement** : influxdb measurement name (default : counter)
 
 #### properties for using udp protocol(default)
-* **ext_plugin_influxdb_udp** : use UDP protocol (default : true)
+* **ext_plugin_influxdb_udp** : use UDP protocol (default : false) Cargo-culting UDP is discouraged for InfluxDB 3.0
 * **ext_plugin_influxdb_udp_local_ip** : UDP local address (default : null)
 * **ext_plugin_influxdb_udp_local_port** : UDP local address (default : 0)
 * **ext_plugin_influxdb_udp_target_ip** : UDP target(influxdb) address (default : 127.0.0.1)
 * **ext_plugin_influxdb_udp_target_port** : UDP target(influxdb) port (default : 8089)
 
-#### properties for using http protocol (set false **ext_plugin_influxdb_udp** for using http)
-* **ext_plugin_influxdb_http_target_ip** : http target(influxdb) address (default : 127.0.0.1)
-* **ext_plugin_influxdb_http_target_port** : http target(influxdb) port (default : 8086)
-* **ext_plugin_influxdb_http_retention_policy** : measurement retention policy (default : default)
-* **ext_plugin_influxdb_id** : (default : root)
-* **ext_plugin_influxdb_password** : (default : root)
-* **ext_plugin_influxdb_dbName** : influxdb dbName (default : scouterCounter)
+#### properties for using http protocol (InfluxDB 3.0 API, set false **ext_plugin_influxdb_udp**)
+* **ext_plugin_influxdb_http_url** : http target(influxdb) URL (default : http://127.0.0.1:8086)
+* **ext_plugin_influxdb_token** : authentication token for InfluxDB 3.0 (default : empty)
+* **ext_plugin_influxdb_database** : influxdb database / bucket name (default : scouterCounter)
     
 ### dependencies
 Refer to [pom.xml](./pom.xml)
